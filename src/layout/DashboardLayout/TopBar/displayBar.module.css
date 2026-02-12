@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+/* font-family: "Rajdhani", sans-serif; */
+
+.wrapper {
+  width: 100%;
+  background: #30161f;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Rajdhani", sans-serif;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  padding: 0 10px;
+  margin: 0;
+}
+
+.displayRow {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.currencyWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.diamond {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.amount {
+  color: #00e5ff;
+  font-size: 1.2rem;
+}
+
+.ticketText {
+  color: red;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.currencyCol,
+.ticketsCol {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0;
+}
+
+.ticketsCol {
+  justify-content: flex-end;
+}
+
+@media (max-width: 576px) {
+  .amount {
+    font-size: 18px;
+  }
+
+  .ticketText {
+    font-size: 18px;
+    display: flex;
+  }
+
+  .diamond {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.balanceImage {
+  width: 20px;
+  height: 20px;
+  margin-right: 2px;
+}
+
+.diamondPic {
+  width: 20px;
+  height: 20px;
+}
