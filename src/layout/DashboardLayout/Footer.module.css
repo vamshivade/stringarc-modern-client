@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+/* font-family: "Rajdhani", sans-serif; */
+
+/* Footer Tabs Container */
+.footerTabs {
+  position: fixed;
+  bottom: 0px;
+  font-family: "Rajdhani", sans-serif;
+  left: 0;
+  right: 0;
+  background: #3a111f;
+  border-top: 1px solid #333;
+  z-index: 1;
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto auto 0;
+  padding: 10px 0;
+  /* background: rgba( 255, 255, 255, 0.25 ); */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+}
+
+/* Navigation List */
+.navList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Navigation Item */
+.navItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  /* border: 1px solid red; */
+}
+
+/* Active Item */
+.navItem.active {
+  position: relative;
+  top: -20px;
+  /* Elevated position for active state */
+  width: 70px;
+  height: 70px;
+}
+
+.navItem.active::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #00ffff73, transparent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(10px);
+  /* Soft glow effect */
+  z-index: -1;
+}
+
+/* Navigation Link */
+.navLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  text-decoration: none;
+  width: 70px;
+  height: 70px;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+/* Active Link */
+.navLink.activeLink {
+  color: #00ffff;
+  /* background: #222; */
+  /* box-shadow: 0 0 15px #00ffff; */
+  border-radius: 50%;
+  transform: scale(1.1);
+}
+
+/* Navigation Icon */
+.navIcon {
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s ease;
+}
+
+/* Special Home Icon Styling */
+.homeIcon {
+  position: relative;
+  /* width: 70px;
+  height: 70px; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.homeIcon img {
+  width: 80%;
+  height: 80%;
+  position: relative;
+  z-index: 1000;
+  top: -10px;
+  transition: all 0.3s ease;
+}
+
+.navItem.active .navIcon {
+  filter: drop-shadow(0 0 10px #00ffff);
+}
