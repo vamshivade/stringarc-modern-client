@@ -1,4 +1,4 @@
-# Telegram Mini-App Arcade Platform README
+# Telegram Mini-App Arcade Platform
 
 ## Project Overview
 
