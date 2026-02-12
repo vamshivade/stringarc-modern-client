@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+/* font-family: "Rajdhani", sans-serif; */
+
+.popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(26, 26, 26, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  padding: 24px;
+  border-radius: 24px 24px 0 0;
+  animation: TaskPopup_TaskPopup_slideUp__p7Anz__UWKEP 0.3s ease-out;
+  box-shadow: 0 -15px 80px #ff1b6b;
+  z-index: 1000;
+  border-top: 3px solid #ff1b6b;
+  min-height: 40vh;
+  font-family: "Rajdhani", sans-serif;
+  scrollbar-width: none;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.popupContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.closeIcon {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: none;
+  border: none;
+  color: #cccccc;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.2s ease;
+}
+
+.closeIcon:hover {
+  color: #ffffff;
+}
+
+.taskHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.taskIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  margin-right: 15px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.taskIcon:hover {
+  transform: scale(1.05);
+}
+
+.popupContent h3 {
+  font-size: 1.4rem;
+  margin: 0;
+  color: #ffffff;
+  text-align: left;
+  flex-grow: 1;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+.taskDescription {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #cccccc;
+}
+
+.rewardContainer {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 215, 0, 0.2),
+    rgba(255, 215, 0, 0.05)
+  );
+  border-radius: 16px;
+  padding: 2px;
+  width: 100%;
+  margin-top: 10px;
+  transition: transform 0.3s ease;
+}
+
+.rewardContainer:hover {
+  transform: translateY(-2px);
+}
+
+.rewardInner {
+  background: rgba(26, 26, 26, 0.8);
+  border-radius: 14px;
+  padding: 8px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rewardLabel {
+  font-size: 1.1rem;
+  color: #cccccc;
+  margin: 0;
+}
+
+.rewardAmount {
+  font-weight: bold;
+  color: #ffd700;
+  font-size: 1.5rem;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.popupActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.completeButton,
+.claimButton {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  /* width: 100%; */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.completeButton {
+  background-color: #ff1b6b;
+  border: 1px solid #ffd700;
+  color: white;
+  box-shadow: 0px 0px 10px #00ffff;
+}
+
+.claimButton {
+  background-color: #ffd700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  /* box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3); */
+}
+
+.completeButton:hover,
+.claimButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.completedIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+@media (max-width: 480px) {
+  .popupContent h3 {
+    font-size: 1.2rem;
+  }
+
+  .taskDescription {
+    font-size: 25px;
+  }
+}
+
+.claimedMessage {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

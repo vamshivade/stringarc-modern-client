@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+/* font-family: "Rajdhani", sans-serif; */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 86vh;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  opacity: 1;
+  font-family: "Rajdhani", sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.currency {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  color: #ffd700;
+}
+
+.currencyIcon {
+  color: #00ffff;
+}
+
+.exchange {
+  color: #00ffff;
+  font-size: 1rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #00ffff;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  margin-bottom: 0px;
+}
+.subtitle {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 0px;
+  padding: 5px;
+  font-size: 1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 50px 10px 20px 10px;
+  grid-gap: 20px;
+  gap: 20px;
+  grid-row-gap: 50px;
+  overflow: hidden auto;
+  height: 100%;
+  scrollbar-width: none;
+}
+
+.card {
+  background: linear-gradient(
+    180deg,
+    rgb(48 22 31 / 91%) 0%,
+    rgb(247 80 73 / 73%) 100%
+  );
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border: 1px solid #5ef6ff;
+  box-shadow: 0px 0px 3px 1px #00ffff;
+}
+
+.boosterImage {
+  position: relative;
+  top: -42%;
+  right: 3%;
+  color: transparent;
+  background: linear-gradient(45deg, black, #00ffff);
+  box-shadow: 0 0 20px 3px #00ffff82;
+  border-radius: 27%;
+  object-fit: contain;
+  border: 1px solid #0dcaf0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(255, 0, 255, 0.4);
+}
+
+.badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: #ff00ff;
+  color: white;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.icon {
+  color: white;
+}
+
+.boosterName {
+  color: #ffff00;
+  font-size: 1.1rem;
+  margin-bottom: 3px;
+  text-shadow: 0 0 10px rgb(255 255 0);
+}
+
+.duration {
+  color: #00ffff;
+  margin-bottom: 3px;
+  font-size: 0.8rem;
+}
+
+.multiplier {
+  background: linear-gradient(180deg, #ffff00 0%, #ee6a1e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 3px;
+  display: flex;
+  font-size: 0.8rem;
+}
+
+.price {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: white;
+  opacity: 1;
+}
+
+.buyButton {
+  background: linear-gradient(180deg, #ffff00 0%, #ffa500 100%);
+  border: 2px solid #001429;
+  box-shadow: -2px 4px 0px 0px #001429;
+  color: black;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 11px;
+  margin-top: 7px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 85%;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navButton {
+  background: none;
+  border: none;
+  color: #ff00ff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+}
+
+.navButton:hover {
+  color: #ff66ff;
+  transform: scale(1.1);
+}
+
+.infinityIcon {
+  color: #ff00ff;
+  filter: drop-shadow(0 0 5px rgba(255, 0, 255, 0.5));
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.8rem;
+  }
+}

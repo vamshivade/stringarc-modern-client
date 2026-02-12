@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+/* font-family: "Rajdhani", sans-serif; */
+
+.containerWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: "Rajdhani", sans-serif;
+  scrollbar-width: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  padding: 2px;
+  margin-top: 10px;
+}
+
+.borderEffect {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #ff4655;
+  clip-path: polygon(
+    0 20px,
+    20px 0,
+    100% 0,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    0 100%
+  );
+  z-index: 1;
+}
+
+.borderEffect::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #0c0c0c;
+  clip-path: polygon(
+    0 18px,
+    18px 0,
+    calc(100% - 2px) 0,
+    calc(100% - 2px) calc(100% - 18px),
+    calc(100% - 20px) calc(100% - 2px),
+    0 calc(100% - 2px)
+  );
+}
+
+.borderEffect::after {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 0;
+  height: 100%;
+  width: 30px;
+  background: linear-gradient(to right, transparent, #ff4655);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 30px 100%, 0 calc(100% - 30px));
+}
+
+.innerContent {
+  position: relative;
+  z-index: 2;
+  padding: 12px;
+}
+
+.title {
+  color: #ff4655;
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 8px;
+  text-transform: uppercase;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, #ff4655 60%, transparent);
+}
+
+.tasksWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.taskCard {
+  background-color: #000000;
+  border-radius: 12px;
+  padding: 10px 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.taskCard::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(45deg, rgba(255, 70, 85, 0.5), transparent);
+  border-radius: 13px;
+  z-index: -1;
+}
+
+.mainContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatarWrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2a2a2a;
+  overflow: hidden;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.taskName {
+  color: #00ffff;
+  font-size: 16px;
+  font-weight: 500;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.goButton {
+  background: linear-gradient(90deg, #ffff00, #ffd700);
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+
+.goButton::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: #ffffff;
+  border-radius: 22px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.goButton::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 24px;
+  background: rgba(255, 255, 0, 0.3);
+  z-index: -2;
+  filter: blur(4px);
+}
+
+.arrow {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.rewardSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.rewardText {
+  color: #ff4655;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.pointsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.plus {
+  color: #00ffff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.ticketIcon {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) saturate(100%) invert(80%) sepia(72%) saturate(552%)
+    hue-rotate(156deg) brightness(106%) contrast(104%);
+}
+
+.points {
+  color: #00ffff;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+@media (max-width: 576px) {
+  /* .containerWrapper {
+        padding: 15px;
+    } */
+
+  .title {
+    font-size: 18px;
+  }
+
+  .taskName {
+    font-size: 14px;
+  }
+
+  .points {
+    font-size: 14px;
+  }
+
+  .goButton {
+    padding: 6px 16px;
+    font-size: 12px;
+  }
+}

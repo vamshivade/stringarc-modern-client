@@ -1,0 +1,522 @@
+.gameContainer {
+  position: relative;
+  z-index: 10;
+  width: 90vw;
+  height: 70vh;
+  overflow: hidden;
+  background-color: #e0dcd1;
+  /* Beige background to match the reference image */
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 30px 0;
+}
+
+.loadingContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.loadingText {
+  font-size: 14px;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  /* Light grey */
+  border-top: 4px solid #3498db;
+  /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height: 40px;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.canvas {
+  display: block;
+  width: 100%;
+  height: 70%;
+  touch-action: manipulation;
+  /* Better than 'none' for most browsers */
+}
+
+.scoreDisplay {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  z-index: 10;
+}
+
+.instructionText {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  z-index: 10;
+}
+
+.controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.controlButton {
+  background: none;
+  border: 2px solid #9c27b0;
+  /* Purple border to match the reference image */
+  color: #9c27b0;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.controlButton:hover {
+  background-color: rgba(156, 39, 176, 0.1);
+}
+
+.controlIcon {
+  color: #9c27b0;
+}
+
+.statsDisplay {
+  position: absolute;
+  bottom: 100px;
+  left: 20px;
+  font-size: 1rem;
+  color: #333;
+  z-index: 10;
+  font-weight: bold;
+}
+
+.menuOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.menuContent {
+  background-color: #28192b;
+  font-size: 14px;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 90%;
+  width: 300px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  transform: translateY(0);
+  animation: fadeIn 0.5s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 
+.partyIcon {
+  font-size: 2.5rem;
+  color: #ff44cc;
+  margin-bottom: 0.5rem;
+} */
+
+.winTitle {
+  color: white !important;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+
+.winTitleee {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.ticketAmount {
+  color: gold;
+  font-size: 20px;
+}
+
+.ticketIcon {
+  color: #44aaff;
+  font-size: 2rem;
+}
+
+.riskButton {
+  background: #44134b;
+  border: 1px solid #9c27b0;
+  padding: 8px 10px;
+  border-radius: 130px;
+  color: #ffffffc2;
+  font-weight: 300;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 10px;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+
+
+.quitButton {
+  background: #44134b;
+  border: 1px solid #9c27b0;
+  padding: 8px 10px;
+  border-radius: 130px;
+  color: #ffffffc2;
+  font-weight: 300;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 10px;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+
+
+.loadingContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0dcd1;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.loadingSpinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(156, 39, 176, 0.3);
+  border-radius: 50%;
+  border-top-color: #9c27b0;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+  font-family: "Arial", sans-serif;
+  letter-spacing: 1px;
+}
+
+.instructions {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+  font-family: "Arial", sans-serif;
+}
+
+.actionButton {
+  background-color: #9c27b0;
+  /* Purple to match the control buttons */
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.actionButton:hover {
+  background-color: #7b1fa2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.actionButton:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.riskkquitt {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Desktop specific styles */
+@media (min-width: 1024px) {
+  .scoreDisplay {
+    font-size: 3rem;
+  }
+
+  .instructionText {
+    font-size: 1rem;
+    top: 80px;
+  }
+
+  .controlButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .statsDisplay {
+    font-size: 1rem;
+  }
+
+  .menuContent {
+    padding: 2rem;
+    width: 400px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .instructions {
+    font-size: 1.2rem;
+  }
+
+  .actionButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Tablet styles */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .scoreDisplay {
+    font-size: 3rem;
+  }
+
+  .instructionText {
+    font-size: 1rem;
+    top: 80px;
+  }
+
+  .controlButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .statsDisplay {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .canvas {
+    height: 60%;
+    /* Reduce canvas height on mobile for better visibility */
+  }
+
+  .instructionText {
+    font-size: 0.9rem;
+    top: 70px;
+    padding: 0 10px;
+  }
+
+  .statsDisplay {
+    bottom: 80px;
+    /* Move stats up for better visibility on mobile */
+  }
+
+  .menuContent {
+    max-width: 85%;
+    padding: 1.5rem;
+  }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+  .scoreDisplay {
+    font-size: 2rem;
+  }
+
+  .instructionText {
+    font-size: 0.8rem;
+    top: 60px;
+  }
+
+  .controlButton {
+    width: 32px;
+    height: 32px;
+  }
+
+  .statsDisplay {
+    font-size: 0.8rem;
+  }
+}
+
+/* Portrait orientation specific adjustments */
+@media (max-width: 767px) and (orientation: portrait) {
+
+  .scoreDisplay {
+    font-size: 2.5rem;
+  }
+
+  .instructionText {
+    font-size: 0.9rem;
+    top: 70px;
+  }
+
+  .controlButton {
+    width: 36px;
+    height: 36px;
+  }
+
+  .statsDisplay {
+    font-size: 0.9rem;
+    bottom: 10px;
+  }
+}
+
+/* Landscape orientation specific adjustments */
+@media (max-width: 767px) and (orientation: landscape) {
+  .scoreDisplay {
+    font-size: 2.5rem;
+  }
+
+  .instructionText {
+    font-size: 0.9rem;
+    top: 70px;
+  }
+
+  .controlButton {
+    width: 36px;
+    height: 36px;
+  }
+
+  .statsDisplay {
+    font-size: 0.9rem;
+  }
+
+  .menuContent {
+    padding: 2rem;
+    width: 400px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .instructions {
+    font-size: 1.2rem;
+  }
+
+  .actionButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+.iconActive {
+  opacity: 1;
+  color: #4caf50;
+  /* Green for active */
+}
+
+.iconMuted {
+  opacity: 0.4;
+  color: #aaa;
+  /* Greyed out */
+}
+
+/* Add specific styles for very small screens */
+@media (max-width: 360px) {
+  .canvas {
+    height: 55%;
+  }
+
+  .scoreDisplay {
+    font-size: 1.8rem;
+    top: 15px;
+  }
+
+  .instructionText {
+    font-size: 0.75rem;
+    top: 55px;
+  }
+
+  .statsDisplay {
+    bottom: 70px;
+    font-size: 0.75rem;
+  }
+}
+
+/* Fix for iOS Safari 100vh issue */
+@supports (-webkit-touch-callout: none) {
+  .gameContainer {
+    height: -webkit-fill-available;
+  }
+}
+
+/* Add styles for the game over popup */
+.gameOverText {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}

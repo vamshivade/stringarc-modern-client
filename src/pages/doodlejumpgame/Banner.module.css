@@ -1,0 +1,232 @@
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 20, 147, 0.7);
+  }
+
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 20, 147, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 20, 147, 0);
+  }
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100vh; */
+  padding: 6px;
+}
+
+.gameContainer {
+  width: 100%;
+  max-width: 400px;
+  height: 150px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  overflow: visible;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.gameImage {
+  object-fit: fill;
+  border-radius: 12px;
+}
+
+.playButtonContainer {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.playNowButton {
+  background: #ff1493;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+  animation: pulse 2s infinite;
+}
+
+.dialogPaper {
+  background-color: #4a235a !important;
+  border-radius: 12px !important;
+  padding: 0 !important;
+  max-width: 90vw !important;
+  width: 320px !important;
+  margin: 0 !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  max-height: fit-content !important;
+  max-width: fit-content !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+  border: 3px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(3px) !important;
+}
+
+.dialogContent {
+  padding: 10px 24px 15px !important;
+  background-color: #4a235a !important;
+}
+
+.contentBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+  text-align: center;
+}
+
+.ticketHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+.ticketIcon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.ticketDisplay {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.textField {
+  margin-bottom: 20px !important;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 8px !important;
+}
+
+.input {
+  color: white !important;
+  font-size: 16px !important;
+  overflow: hidden !important;
+}
+
+.input :global(.MuiOutlinedInput-notchedOutline) {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  border-width: 1px !important;
+}
+
+.input:hover :global(.MuiOutlinedInput-notchedOutline) {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.input:focus-within :global(.MuiOutlinedInput-notchedOutline) {
+  border-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.errorText {
+  color: #ff6b6b !important;
+  font-size: 14px !important;
+}
+
+.successMessage {
+  background-color: rgba(46, 204, 113, 0.2);
+  color: #2ecc71;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.noButton {
+  background-color: #6b2f91;
+  color: white;
+  border-radius: 24px;
+  padding: 10px 28px;
+  font-size: 16px;
+  min-width: 120px;
+  border: none;
+  cursor: pointer;
+  text-transform: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.noButton:hover:not(:disabled) {
+  background-color: #7d3aa6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.noButton:disabled {
+  background-color: #5a2a7a;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.playButton {
+  background-color: #e0e0e0;
+  color: #000000;
+  border-radius: 24px;
+  padding: 10px 28px;
+  font-size: 16px;
+  min-width: 120px;
+  border: none;
+  cursor: pointer;
+  text-transform: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playButton:hover:not(:disabled) {
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.playButton:disabled {
+  background-color: #c0c0c0;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loadingContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.loadingText {
+  font-size: 14px;
+}

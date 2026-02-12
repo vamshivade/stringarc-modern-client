@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+/* font-family: "Rajdhani", sans-serif; */
+
+.containerWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: "Rajdhani", sans-serif;
+  scrollbar-width: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  padding: 2px;
+  /* margin-top: 40px; */
+}
+
+.disabledCard {
+  opacity: 0.5; /* Make the ad look disabled */
+  pointer-events: none; /* Prevent clicks on disabled ads */
+}
+
+.borderEffect {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #ff4655;
+  clip-path: polygon(
+    0 20px,
+    20px 0,
+    100% 0,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    0 100%
+  );
+  z-index: 1;
+}
+
+.borderEffect::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #0c0c0c;
+  clip-path: polygon(
+    0 18px,
+    18px 0,
+    calc(100% - 2px) 0,
+    calc(100% - 2px) calc(100% - 18px),
+    calc(100% - 20px) calc(100% - 2px),
+    0 calc(100% - 2px)
+  );
+}
+
+.borderEffect::after {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 0;
+  height: 100%;
+  width: 30px;
+  background: linear-gradient(to right, transparent, #ff4655);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 30px 100%, 0 calc(100% - 30px));
+}
+
+.innerContent {
+  position: relative;
+  z-index: 2;
+  padding: 12px;
+}
+
+.title {
+  color: #ff4655;
+  font-weight: 600;
+  position: relative;
+  text-transform: capitalize;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, #ff4655 60%, transparent);
+}
+
+.rewardsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@keyframes moveToBack {
+  0% {
+    transform: scale(1);
+    z-index: 2;
+  }
+  50% {
+    transform: scale(0.9);
+    z-index: 0;
+  }
+  100% {
+    transform: scale(1);
+    z-index: 1;
+  }
+}
+
+.clickedAd {
+  animation: moveToBack 0.3s ease-in-out forwards;
+}
+
+.rewardCard {
+  background-color: #000000;
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+}
+
+.rewardCard.clickedAd {
+  animation: moveToBack 0.3s ease-in-out forwards;
+}
+
+.rewardCard::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border-radius: 11px;
+  background: linear-gradient(45deg, #ff4655, rgba(255, 70, 85, 0.5));
+  z-index: -1;
+}
+
+.rewardCard::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 14px;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 70, 85, 0.3),
+    rgba(255, 70, 85, 0.1)
+  );
+  z-index: -2;
+  filter: blur(4px);
+}
+
+.rewardContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+}
+
+.iconWrapper {
+  background-color: #229ed9;
+  border-radius: 8px;
+  /* padding: 8px; */
+  margin-right: 15px;
+  position: relative;
+}
+
+.iconWrapper::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border-radius: 9px;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.1)
+  );
+  z-index: -1;
+}
+
+.telegramIcon {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.watchText {
+  color: #ffff00;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 0;
+  position: relative;
+  text-transform: capitalize;
+}
+
+.watchText::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background-color: rgba(255, 255, 0, 0.2);
+  filter: blur(4px);
+  z-index: -1;
+}
+
+.pointsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ticketIcon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%) invert(80%) sepia(72%) saturate(552%)
+    hue-rotate(156deg) brightness(106%) contrast(104%);
+}
+
+.points {
+  color: #00ffff;
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+}
+
+.points::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background-color: rgba(0, 255, 255, 0.2);
+  filter: blur(4px);
+  z-index: -1;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+}
+
+.arrowIcon {
+  width: 24px;
+  height: 24px;
+  font-size: 25px;
+  filter: brightness(0) saturate(100%) invert(100%);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 576px) {
+  /* .containerWrapper {
+      padding: 15px;
+    } */
+
+  .title {
+    font-size: 18px;
+  }
+
+  .watchText {
+    font-size: 16px;
+  }
+
+  .points {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+/* font-family: "Rajdhani", sans-serif; */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 86vh;
+  position: relative;
+  flex: 1 1;
+  font-family: "Rajdhani", sans-serif;
+  perspective: 1200px;
+  scrollbar-width: none;
+}
+
+.main > * {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 58px;
+  justify-content: space-between;
+  transform: translateZ(50px);
+  /* Moves the content closer to the viewer */
+}
+
+.inviteText {
+  color: #00ffff;
+  font-weight: bold;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.avatars {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  /* margin-bottom: 2rem; */
+}
+
+.avatar {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatarImage {
+  object-fit: cover;
+  width: 70%;
+  height: 100%;
+}
+.solPriceIcons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px; /* Spacing between the two icon groups */
+  padding: 8px 12px;
+  font-size: 40px;
+  border-radius: 8px;
+}
+
+.iconss {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Spacing between icon and text */
+}
+
+.iconssPrice {
+  color: #00ffff;
+  font-weight: bold;
+  font-size: 1.8rem;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+}
+.iconImage {
+  width: 43px;
+  height: 100%;
+}
+
+.rewardsSection {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.rewardItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* padding: 0.5rem 1rem; */
+  border-radius: 8px;
+  flex-direction: column;
+}
+
+.rewardIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.rewardText {
+  font-size: 15px;
+  color: yellow;
+}
+
+.inviteButtons {
+  display: flex;
+  gap: 15px;
+  /* 15px gap between buttons */
+  /* margin-bottom: 100px; */
+  margin-top: 20px;
+  justify-content: center;
+  /* Center the buttons horizontally */
+}
+
+.inviteCopy {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.inviteLink {
+  text-decoration: none;
+}
+
+.inviteButton,
+.copyButton {
+  font-size: 18px;
+  border: 2px solid #ffffff;
+  /* box-shadow: -1px 0px 20px 5px rgb(195 31 209); */
+  /* box-shadow: 0px -4px 20px 0px #F75049; */
+  box-shadow: 0px 4px 20px 0px #f75049;
+  color: yellow;
+  background: linear-gradient(180deg, #ac6f76 0%, #30161f 100%);
+  /* background: transparent; */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3rem 0.8rem;
+  gap: 1rem;
+  transition: all 0.2sease-in-out;
+}
+
+.copyButton {
+  padding: 8px;
+  /* border-radius: 50%; */
+}
+
+.inviteLinkAnchor {
+  text-decoration: none;
+}
+
+.inviteButton:hover,
+.copyButton:hover {
+  background-color: rgba(225, 82, 231, 0.35);
+}
+
+.copyImage,
+.iconImage {
+  height: 22px;
+  width: 22px;
+}
+
+.referralContent {
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  align-items: center;
+  color: #fff;
+  /* padding: 2rem; */
+  border-radius: 15px;
+  /* margin-top: 2rem; */
+  width: 90%;
+}
+
+.referralContent h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.referralContent p {
+  /* font-size: 1rem; */
+  line-height: 1.5;
+  margin-bottom: 0px;
+  font-size: 16px;
+  /* padding-left: 14px;
+        padding-right: 14px; */
+}
+
+.walletNote {
+  color: #ffffff;
+  margin-top: 5px;
+  /* padding: 10px; */
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.note {
+  font-size: 1.6rem;
+  color: #ff00ff;
+  text-align: center;
+  font-weight: bold;
+}
+.friends {
+  text-align: center;
+  /* padding: 10px; */
+  font-size: 21px;
+  margin-bottom: 0px;
+  line-height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid red; */
+}
